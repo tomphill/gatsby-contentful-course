@@ -1,10 +1,12 @@
 import React from "react";
+import { Layout, SEO } from "components";
 
 const Index = () => {
     return (
-        <div>
+        <Layout>
+            <SEO title="Home" description="test" />
             <h1>Gatsby &amp; Contentful</h1>
-        </div>
+        </Layout>
     );
 };
 
