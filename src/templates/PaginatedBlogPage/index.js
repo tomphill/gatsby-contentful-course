@@ -1,7 +1,7 @@
-import React from "react";
-import { Layout } from "components";
-import { Link } from "gatsby";
-import { Content, Post, Pagination } from "./style";
+import React from 'react';
+import { Layout } from 'components';
+import { Link } from 'gatsby';
+import { Content, Post, Pagination } from './style';
 
 const PaginatedBlogPage = ({ pageContext }) => {
     return (
@@ -10,7 +10,9 @@ const PaginatedBlogPage = ({ pageContext }) => {
                 {pageContext.posts.map((post) => (
                     <Post key={post.contentful_id}>
                         <div>
-                            <Link to={post.slug}>{post.title}</Link>
+                            <Link to={`/${pageContext.blogSlug}/${post.slug}`}>
+                                {post.title}
+                            </Link>
                         </div>
                         <div>{post.description}</div>
                         <div>
@@ -24,7 +26,7 @@ const PaginatedBlogPage = ({ pageContext }) => {
                     return (
                         <Link
                             to={`/${pageContext.blogSlug}/${
-                                i === 0 ? "" : i + 1
+                                i === 0 ? '' : i + 1
                             }`}
                         >
                             {i + 1}
